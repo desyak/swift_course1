@@ -10,6 +10,7 @@ import UIKit
 
 class LoginFormController: UIViewController {
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,6 +18,8 @@ class LoginFormController: UIViewController {
     }
     
 
+    @IBOutlet var passTextField: UITextField!
+    @IBOutlet var loginTextField: UITextField!
     /*
     // MARK: - Navigation
 
