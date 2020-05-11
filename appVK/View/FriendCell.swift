@@ -1,0 +1,18 @@
+//
+//  FriendCell.swift
+//  appVK
+//
+//  Created by Sergey Desyak on 18.11.2019.
+//  Copyright © 2019 Sergey Desyak. All rights reserved.
+//
+
+import UIKit
+
+class FriendCell: UITableViewCell {
+
+    @IBOutlet var friendImageView: UIImageView!
+    
+    @IBOutlet var friendNameLabel: UILabel!
+    
+    
+}
