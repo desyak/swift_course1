@@ -9,7 +9,9 @@
 import UIKit
 
 class HeartView: UIView {
-    
+    let heartCheckColor = UIColor.red
+    let heartUncheckColor = UIColor.blue
+    var isHeartCheck = false
     let heartcolor = UIColor.red
     let heartEmpty = UIColor.clear
     public var isFilled = false
