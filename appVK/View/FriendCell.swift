@@ -13,16 +13,19 @@ class FriendCell: UITableViewCell {
     @IBOutlet var avatarView: AvatarView!
     @IBOutlet var friendImageView: UIImageView!
     @IBOutlet var friendNameLabel: UILabel!
-    
     @IBOutlet var heartLike: HeartView!
-    @IBInspectable var shadowColor = UIColor.black
+    
+    @IBInspectable var heartShadowRadius: CGFloat = 7
+    @IBInspectable var heartShadowOpacity: Float = 0.8
+    @IBInspectable var heartShadowColor: UIColor = .black
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        avatarView.shadowView.layer.shadowColor = shadowColor.cgColor
+        avatarView.shadowView.layer.shadowColor = heartShadowColor.cgColor
         avatarView.shadowView.layer.shadowOffset = .zero
-        avatarView.shadowView.layer.shadowRadius = 7
-        avatarView.shadowView.layer.shadowOpacity = 0.8
+        avatarView.shadowView.layer.shadowRadius = heartShadowRadius
+        avatarView.shadowView.layer.shadowOpacity = heartShadowOpacity
     }
     
     override func layoutSubviews() {

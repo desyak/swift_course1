@@ -129,24 +129,22 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="x1L-mi-dob" translatesAutoresizingMaskIntoConstraints="NO" id="a9l-ah-rZh">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
                                     <subviews>
-                                        <view contentMode="scaleAspectFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MCV-M5-9MN" userLabel="AvatarView" customClass="AvatarView" customModule="appVK" customModuleProvider="target">
+                                        <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="MCV-M5-9MN" userLabel="AvatarView" customClass="AvatarView" customModule="appVK" customModuleProvider="target">
                                             <rect key="frame" x="16" y="11" width="100" height="100"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="avx-61-ryy" userLabel="ShadowView">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="avx-61-ryy" userLabel="ShadowView">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                     <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </view>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jSk-7x-rE4">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jSk-7x-rE4">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                 </imageView>
-                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HMN-rn-HSy" customClass="HeartView" customModule="appVK" customModuleProvider="target">
-                                                    <rect key="frame" x="54" y="54" width="46" height="46"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HMN-rn-HSy" customClass="HeartView" customModule="appVK" customModuleProvider="target">
+                                                    <rect key="frame" x="62" y="62" width="38" height="38"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="46" id="3Sf-gt-RFu"/>
-                                                        <constraint firstAttribute="height" constant="46" id="Ovc-7C-94E"/>
-                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="46" id="qOo-Iv-lBu"/>
-                                                        <constraint firstAttribute="width" constant="46" id="rou-M5-nKk"/>
+                                                        <constraint firstAttribute="height" constant="38" id="Ovc-7C-94E"/>
+                                                        <constraint firstAttribute="width" constant="38" id="rou-M5-nKk"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -171,8 +169,8 @@
                                                 <outlet property="shadowView" destination="avx-61-ryy" id="wJJ-iM-ojW"/>
                                             </connections>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39E-D5-dbE">
-                                            <rect key="frame" x="235.99999999999997" y="50.666666666666657" width="41.666666666666657" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39E-D5-dbE">
+                                            <rect key="frame" x="235.99999999999997" y="50.666666666666664" width="41.666666666666657" height="20.999999999999993"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -190,6 +188,14 @@
                                 <accessibility key="accessibilityConfiguration" identifier="FriendCell">
                                     <bool key="isElement" value="NO"/>
                                 </accessibility>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="heartShadowRadius">
+                                        <real key="value" value="7"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="heartShadowColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="avatarView" destination="MCV-M5-9MN" id="IiW-tb-bXc"/>
                                     <outlet property="friendImageView" destination="jSk-7x-rE4" id="RGE-z3-H4f"/>
@@ -240,15 +246,15 @@
                                             </constraints>
                                         </imageView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cdb-VG-AOO" customClass="HeartView" customModule="appVK" customModuleProvider="target">
-                                            <rect key="frame" x="79" y="81" width="46" height="46"/>
+                                            <rect key="frame" x="79" y="81" width="38" height="38"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="46" id="hkA-jQ-VxY"/>
-                                                <constraint firstAttribute="width" constant="46" id="xry-1a-Fax"/>
+                                                <constraint firstAttribute="height" constant="38" id="hkA-jQ-VxY"/>
+                                                <constraint firstAttribute="width" constant="38" id="xry-1a-Fax"/>
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ykQ-md-a5e">
-                                            <rect key="frame" x="90" y="109" width="0.0" height="18"/>
+                                            <rect key="frame" x="90" y="101" width="0.0" height="18"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="18" id="PHC-H6-oBv"/>
                                             </constraints>

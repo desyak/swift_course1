@@ -11,6 +11,7 @@ import UIKit
 
 class AvatarView: UIView {
     @IBOutlet var shadowView: UIView!
+    
     // @IBOutlet var friendImageView: UIImageView!
     
     
