@@ -89,13 +89,15 @@ class HeartView: UIView {
     // MARK: -  Privates
     private func setupGestureRec() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapped(_:)))
+        
         tap.numberOfTapsRequired = 1
-        addGestureRecognizer(tap)
+        self.addGestureRecognizer(tap)
     }
     
     @objc private func tapped(_ tapGesture: UITapGestureRecognizer) {
         isChecked.toggle()
         setNeedsDisplay()
+        
         //sendActions(for: .valueChanged)
     }
     
