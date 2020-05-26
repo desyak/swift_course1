@@ -13,9 +13,9 @@ class PhotoCell: UICollectionViewCell {
     @IBOutlet var galleryImage: UIImageView!
     
     @IBOutlet var countOfLikes: UILabel!
-    func configure(isFill: Bool, countLikes: Int?){
-        self.heartIsFillView.isFilled = isFill
-        self.countOfLikes.text = countLikes!.description
+    
+    func configureHeart(isFill: Bool, countLikes: Int?){
+        heartIsFillView.configure(likes: countLikes!, isLikedByUser: isFill)
     }
     
     

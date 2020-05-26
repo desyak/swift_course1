@@ -43,6 +43,7 @@ class myFriendsViewController: UITableViewController {
         let friendImage = friends[indexPath.row].image
         cell.friendNameLabel.text = friendName
         cell.friendImageView.image = friendImage
+        
 
         return cell
     }

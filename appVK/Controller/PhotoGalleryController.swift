@@ -63,11 +63,11 @@ class PhotoGalleryController: UICollectionViewController {
         let countsLikes: Int = photos[indexPath.row].countChecked ?? 0
         let isPhotoChecked = photos[indexPath.row].isChecked ?? false
         if isPhotoChecked {
-            cell.configure(isFill: true, countLikes: countsLikes)
+            cell.configureHeart(isFill: true, countLikes: countsLikes)
         }
         // Configure the cell
-    
-    
+        cell.countOfLikes.text = String(countsLikes)
+        
         cell.galleryImage.image = imagePhoto
         return cell
     }
