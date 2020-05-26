@@ -31,8 +31,8 @@ class FriendCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        friendImageView.layer.cornerRadius = bounds.height/2
-        avatarView.shadowView.layer.cornerRadius = bounds.height/2
+        friendImageView.layer.cornerRadius = friendImageView.layer.bounds.height/2
+        avatarView.shadowView.layer.cornerRadius = avatarView.shadowView.layer.bounds.height/2
     }
     
 }

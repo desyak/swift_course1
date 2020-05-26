@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xAY-Fm-egk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xAY-Fm-egk">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -129,17 +129,17 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="x1L-mi-dob" translatesAutoresizingMaskIntoConstraints="NO" id="a9l-ah-rZh">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
                                     <subviews>
-                                        <view contentMode="scaleAspectFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MCV-M5-9MN" userLabel="AvatarView" customClass="AvatarView" customModule="appVK" customModuleProvider="target">
+                                        <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="MCV-M5-9MN" userLabel="AvatarView" customClass="AvatarView" customModule="appVK" customModuleProvider="target">
                                             <rect key="frame" x="16" y="11" width="100" height="100"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="avx-61-ryy" userLabel="ShadowView">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="avx-61-ryy" userLabel="ShadowView">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                     <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </view>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jSk-7x-rE4">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jSk-7x-rE4">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                 </imageView>
-                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HMN-rn-HSy" customClass="HeartView" customModule="appVK" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HMN-rn-HSy" customClass="HeartView" customModule="appVK" customModuleProvider="target">
                                                     <rect key="frame" x="62" y="62" width="38" height="38"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
@@ -169,8 +169,8 @@
                                                 <outlet property="shadowView" destination="avx-61-ryy" id="wJJ-iM-ojW"/>
                                             </connections>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39E-D5-dbE">
-                                            <rect key="frame" x="235.99999999999997" y="50.666666666666657" width="41.666666666666657" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39E-D5-dbE">
+                                            <rect key="frame" x="235.99999999999997" y="50.666666666666664" width="41.666666666666657" height="20.999999999999993"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -180,7 +180,6 @@
                                         <constraint firstItem="MCV-M5-9MN" firstAttribute="top" secondItem="a9l-ah-rZh" secondAttribute="top" constant="11" id="1JY-Jg-IrI"/>
                                         <constraint firstAttribute="bottom" secondItem="MCV-M5-9MN" secondAttribute="bottom" constant="11" id="3oV-Fk-Azc"/>
                                         <constraint firstItem="MCV-M5-9MN" firstAttribute="centerY" secondItem="39E-D5-dbE" secondAttribute="centerY" id="UI6-sg-gtD"/>
-                                        <constraint firstItem="MCV-M5-9MN" firstAttribute="leading" secondItem="a9l-ah-rZh" secondAttribute="leadingMargin" id="bZb-V2-rUc"/>
                                         <constraint firstItem="39E-D5-dbE" firstAttribute="leading" secondItem="jSk-7x-rE4" secondAttribute="trailing" constant="120" id="erZ-hS-4GC"/>
                                         <constraint firstItem="MCV-M5-9MN" firstAttribute="leading" secondItem="a9l-ah-rZh" secondAttribute="leading" constant="16" id="kC2-dG-dl6"/>
                                     </constraints>
