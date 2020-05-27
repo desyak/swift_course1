@@ -17,8 +17,8 @@ class HeartView: UIControl {
     let heartcolor = UIColor.red
     let heartEmpty = UIColor.clear
     public var isFilled = false
-    public var countLikes: Int = 0
-    public var isChecked = false
+    var countLikes: Int = 0
+    var isChecked = false
     
     
     
@@ -57,7 +57,9 @@ class HeartView: UIControl {
             context.setStrokeColor(heartUncheckColor.cgColor)
             context.setFillColor(heartEmpty.cgColor)
             countOfLikes?.textColor = heartUncheckColor
-            if (countLikes > 0) {countLikes-=1}
+            if (countLikes > 0) {
+                countLikes-=1
+            }
         }
         // heart.stroke()
         //heart.fill()
@@ -84,7 +86,7 @@ class HeartView: UIControl {
     public func configure(likes count: Int, isLikedByUser: Bool) {
               self.countLikes = count
               self.isChecked = isLikedByUser
-        print("cjfigure")
+              print("cjfigure")
           }
     
     // MARK: -  Privates

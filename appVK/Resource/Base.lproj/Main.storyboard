@@ -199,10 +199,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <outlet property="avatarView" destination="MCV-M5-9MN" id="IiW-tb-bXc"/>
                                     <outlet property="friendImageView" destination="jSk-7x-rE4" id="RGE-z3-H4f"/>
-                                    <outlet property="friendNameLabel" destination="39E-D5-dbE" id="3i3-P7-skN"/>
-                                    <outlet property="heartLike" destination="HMN-rn-HSy" id="Juj-Ah-MnP"/>
+                                    <outlet property="friendNameLabel" destination="39E-D5-dbE" id="qAx-Qq-UNs"/>
                                     <segue destination="Rhd-Iq-8Dv" kind="show" id="LbB-7e-5B6"/>
                                 </connections>
                             </tableViewCell>
@@ -247,8 +245,19 @@
                                                 <constraint firstAttribute="height" constant="118" id="fFP-o8-GJ2"/>
                                             </constraints>
                                         </imageView>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cdb-VG-AOO" customClass="HeartView" customModule="appVK" customModuleProvider="target">
-                                            <rect key="frame" x="79" y="81" width="38" height="38"/>
+                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cdb-VG-AOO" customClass="HeartView" customModule="appVK" customModuleProvider="target">
+                                            <rect key="frame" x="45" y="81" width="72" height="38"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ykQ-md-a5e">
+                                                    <rect key="frame" x="36" y="10" width="0.0" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="18" id="PHC-H6-oBv"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                                                    <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="38" id="hkA-jQ-VxY"/>
@@ -258,15 +267,6 @@
                                                 <outlet property="countOfLikes" destination="ykQ-md-a5e" id="UKn-b9-C8D"/>
                                             </connections>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ykQ-md-a5e">
-                                            <rect key="frame" x="90" y="101" width="0.0" height="18"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="18" id="PHC-H6-oBv"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
-                                            <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="cdb-VG-AOO" firstAttribute="leading" secondItem="Bh4-uX-qpq" secondAttribute="trailing" constant="-45" id="CEq-AH-Voi"/>
@@ -274,8 +274,6 @@
                                         <constraint firstItem="Bh4-uX-qpq" firstAttribute="top" secondItem="zs0-Rs-7dG" secondAttribute="top" constant="5" id="d40-au-ddm"/>
                                         <constraint firstItem="Bh4-uX-qpq" firstAttribute="leading" secondItem="zs0-Rs-7dG" secondAttribute="leading" constant="6" id="m6x-xz-GgV"/>
                                         <constraint firstItem="cdb-VG-AOO" firstAttribute="top" secondItem="Bh4-uX-qpq" secondAttribute="bottom" constant="-42" id="oK8-ir-Hyb"/>
-                                        <constraint firstItem="ykQ-md-a5e" firstAttribute="bottom" secondItem="cdb-VG-AOO" secondAttribute="bottom" id="sBn-h0-Tdj"/>
-                                        <constraint firstAttribute="trailing" secondItem="ykQ-md-a5e" secondAttribute="trailing" constant="40" id="v7h-Gl-f07"/>
                                         <constraint firstItem="Bh4-uX-qpq" firstAttribute="centerX" secondItem="zs0-Rs-7dG" secondAttribute="centerX" id="ynl-Tg-Dof"/>
                                     </constraints>
                                 </collectionViewCellContentView>
