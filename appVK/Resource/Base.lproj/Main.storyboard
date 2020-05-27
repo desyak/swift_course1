@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xAY-Fm-egk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xAY-Fm-egk">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -245,11 +245,11 @@
                                                 <constraint firstAttribute="height" constant="118" id="fFP-o8-GJ2"/>
                                             </constraints>
                                         </imageView>
-                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cdb-VG-AOO" customClass="HeartView" customModule="appVK" customModuleProvider="target">
-                                            <rect key="frame" x="45" y="81" width="72" height="38"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cdb-VG-AOO" customClass="HeartView" customModule="appVK" customModuleProvider="target">
+                                            <rect key="frame" x="79" y="81" width="45" height="38"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ykQ-md-a5e">
-                                                    <rect key="frame" x="36" y="10" width="0.0" height="18"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ykQ-md-a5e">
+                                                    <rect key="frame" x="5" y="10" width="35" height="18"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="18" id="PHC-H6-oBv"/>
                                                     </constraints>
@@ -260,8 +260,12 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="ykQ-md-a5e" secondAttribute="trailing" constant="5" id="Bn5-TU-k8y"/>
+                                                <constraint firstItem="ykQ-md-a5e" firstAttribute="leading" secondItem="cdb-VG-AOO" secondAttribute="leading" constant="5" id="CZx-W2-cg1"/>
+                                                <constraint firstAttribute="bottom" secondItem="ykQ-md-a5e" secondAttribute="bottom" constant="10" id="V55-0W-AV5"/>
+                                                <constraint firstItem="ykQ-md-a5e" firstAttribute="top" secondItem="cdb-VG-AOO" secondAttribute="top" constant="10" id="cLk-bu-R5o"/>
                                                 <constraint firstAttribute="height" constant="38" id="hkA-jQ-VxY"/>
-                                                <constraint firstAttribute="width" constant="38" id="xry-1a-Fax"/>
+                                                <constraint firstAttribute="width" constant="45" id="xry-1a-Fax"/>
                                             </constraints>
                                             <connections>
                                                 <outlet property="countOfLikes" destination="ykQ-md-a5e" id="UKn-b9-C8D"/>

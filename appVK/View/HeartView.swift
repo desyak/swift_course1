@@ -64,7 +64,7 @@ class HeartView: UIControl {
         // heart.stroke()
         //heart.fill()
         
-      
+        
         context.addPath(heart.cgPath)
         context.strokePath()
         
@@ -98,10 +98,10 @@ class HeartView: UIControl {
        
     }
     
+ 
     @objc private func tapped(_ tapGesture: UITapGestureRecognizer) {
         isChecked.toggle()
         setNeedsDisplay()
-         print("tapped")
         sendActions(for: .valueChanged)
     }
     

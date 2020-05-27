@@ -35,6 +35,7 @@ import UIKit
         shadowView.layer.shadowOffset = .zero
         shadowView.layer.shadowRadius = heartShadowRadius
         shadowView.layer.shadowOpacity = heartShadowOpacity
+       
     }
     
     override func layoutSubviews() {
