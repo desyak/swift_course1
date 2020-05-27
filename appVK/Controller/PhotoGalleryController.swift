@@ -15,7 +15,7 @@ class PhotoGalleryController: UICollectionViewController {
         Photo(idPhoto: UIImage(named: "1")! ),
         Photo(idPhoto: UIImage(named: "2")!  , isChecked: true , countChecked: 100),
         Photo(idPhoto: UIImage(named: "3")! ),
-        Photo(idPhoto: UIImage(named: "4")! )
+        Photo(idPhoto: UIImage(named: "4")! , isChecked: false , countChecked: 50)
     ]
     
     override func viewDidLoad() {
@@ -62,11 +62,11 @@ class PhotoGalleryController: UICollectionViewController {
         let imagePhoto = photos[indexPath.row].idPhoto
         let countsLikes: Int = photos[indexPath.row].countChecked ?? 0
         let isPhotoChecked = photos[indexPath.row].isChecked ?? false
-        if isPhotoChecked {
-            cell.configureHeart(isFill: true, countLikes: countsLikes)
-        }
+        //if isPhotoChecked {
+        cell.configureHeart(isFill: isPhotoChecked, countLikes: countsLikes)
+        //}
         // Configure the cell
-        cell.countOfLikes.text = String(countsLikes)
+        //cell.countOfLikes.text = String(countsLikes)
         
         cell.galleryImage.image = imagePhoto
         return cell

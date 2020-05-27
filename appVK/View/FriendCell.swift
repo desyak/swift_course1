@@ -15,24 +15,17 @@ class FriendCell: UITableViewCell {
     @IBOutlet var friendNameLabel: UILabel!
     @IBOutlet var heartLike: HeartView!
     
-    @IBInspectable var heartShadowRadius: CGFloat = 7
-    @IBInspectable var heartShadowOpacity: Float = 0.8
-    @IBInspectable var heartShadowColor: UIColor = .black
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        avatarView.shadowView.layer.shadowColor = heartShadowColor.cgColor
-        avatarView.shadowView.layer.shadowOffset = .zero
-        avatarView.shadowView.layer.shadowRadius = heartShadowRadius
-        avatarView.shadowView.layer.shadowOpacity = heartShadowOpacity
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        friendImageView.layer.cornerRadius = friendImageView.layer.bounds.height/2
-        avatarView.shadowView.layer.cornerRadius = avatarView.shadowView.layer.bounds.height/2
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
     }
+
+    
+    
+    
+
     
 }

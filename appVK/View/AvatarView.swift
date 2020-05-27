@@ -7,11 +7,16 @@
 //
 
 import UIKit
-@IBDesignable
 
-class AvatarView: UIView {
+
+@IBDesignable class AvatarView: UIView {
     @IBOutlet var shadowView: UIView!
+    @IBOutlet var friendImageView: UIImageView!
     
+    @IBInspectable var heartShadowRadius: CGFloat = 7
+    @IBInspectable var heartShadowOpacity: Float = 0.8
+    @IBInspectable var heartShadowColor: UIColor = .black
+    @IBOutlet var heartLike: HeartView!
     // @IBOutlet var friendImageView: UIImageView!
     
     
@@ -23,6 +28,22 @@ class AvatarView: UIView {
         // Drawing code
     }
     */
-
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        shadowView.layer.shadowColor = heartShadowColor.cgColor
+        shadowView.layer.shadowOffset = .zero
+        shadowView.layer.shadowRadius = heartShadowRadius
+        shadowView.layer.shadowOpacity = heartShadowOpacity
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        friendImageView.layer.cornerRadius = bounds.height/2
+        shadowView.layer.cornerRadius = bounds.height/2
+    }
+    
+    
 
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xAY-Fm-egk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xAY-Fm-egk">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -166,7 +166,9 @@
                                                 <constraint firstItem="jSk-7x-rE4" firstAttribute="leading" secondItem="MCV-M5-9MN" secondAttribute="leading" id="pFw-si-nUB"/>
                                             </constraints>
                                             <connections>
-                                                <outlet property="shadowView" destination="avx-61-ryy" id="wJJ-iM-ojW"/>
+                                                <outlet property="friendImageView" destination="jSk-7x-rE4" id="D5n-xP-RiQ"/>
+                                                <outlet property="heartLike" destination="HMN-rn-HSy" id="0dd-Tj-zBy"/>
+                                                <outlet property="shadowView" destination="avx-61-ryy" id="9Cu-ad-VHc"/>
                                             </connections>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39E-D5-dbE">
@@ -200,7 +202,7 @@
                                     <outlet property="avatarView" destination="MCV-M5-9MN" id="IiW-tb-bXc"/>
                                     <outlet property="friendImageView" destination="jSk-7x-rE4" id="RGE-z3-H4f"/>
                                     <outlet property="friendNameLabel" destination="39E-D5-dbE" id="3i3-P7-skN"/>
-                                    <outlet property="heartLike" destination="HMN-rn-HSy" id="wFZ-eR-6pq"/>
+                                    <outlet property="heartLike" destination="HMN-rn-HSy" id="Juj-Ah-MnP"/>
                                     <segue destination="Rhd-Iq-8Dv" kind="show" id="LbB-7e-5B6"/>
                                 </connections>
                             </tableViewCell>

@@ -8,8 +8,8 @@
 
 import UIKit
 
-class HeartView: UIView {
-    @IBOutlet weak var countOfLikes: UILabel!
+class HeartView: UIControl {
+    @IBOutlet var countOfLikes: UILabel!
     
     public let heartCheckColor = UIColor.red
     public let heartUncheckColor = UIColor.blue
@@ -57,7 +57,7 @@ class HeartView: UIView {
             context.setStrokeColor(heartUncheckColor.cgColor)
             context.setFillColor(heartEmpty.cgColor)
             countOfLikes?.textColor = heartUncheckColor
-            if countLikes > 0 {countLikes-=1}
+            if (countLikes > 0) {countLikes-=1}
         }
         // heart.stroke()
         //heart.fill()
@@ -72,18 +72,19 @@ class HeartView: UIView {
         super.init(frame: frame)
         setupGestureRec()
         backgroundColor = .clear
-        countOfLikes?.text = String(self.countLikes)
+        countOfLikes?.text = String(countLikes)
     }
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupGestureRec()
         backgroundColor = .clear
-        countOfLikes?.text = String(self.countLikes)
+        countOfLikes?.text = String(countLikes)
     }
     
     public func configure(likes count: Int, isLikedByUser: Bool) {
               self.countLikes = count
               self.isChecked = isLikedByUser
+        print("cjfigure")
           }
     
     // MARK: -  Privates
@@ -91,14 +92,15 @@ class HeartView: UIView {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapped(_:)))
         
         tap.numberOfTapsRequired = 1
-        self.addGestureRecognizer(tap)
+        addGestureRecognizer(tap)
+       
     }
     
     @objc private func tapped(_ tapGesture: UITapGestureRecognizer) {
         isChecked.toggle()
         setNeedsDisplay()
-        
-        //sendActions(for: .valueChanged)
+         print("tapped")
+        sendActions(for: .valueChanged)
     }
     
 }
