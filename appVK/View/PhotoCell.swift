@@ -16,6 +16,8 @@ class PhotoCell: UICollectionViewCell {
     
     public func configureHeart(countLikes: Int?, isFill: Bool ){
         heartIsFillView.configure(likes: countLikes ?? 0, isLikedByUser: isFill)
+        countOfLikes.text = countLikes.flatMap(String.init)
+        
     }
     
     

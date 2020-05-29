@@ -84,10 +84,10 @@ class HeartView: UIControl {
     }
     
     public func configure(likes count: Int, isLikedByUser: Bool) {
-              self.countLikes = count
-              self.isChecked = isLikedByUser
-              print("cjfigure")
-          }
+        self.countLikes = count
+        self.isChecked = isLikedByUser
+        print("cjfigure")
+    }
     
     // MARK: -  Privates
     private func setupGestureRec() {
@@ -95,14 +95,18 @@ class HeartView: UIControl {
         
         tap.numberOfTapsRequired = 1
         addGestureRecognizer(tap)
-       
+        //addTarget(self, action: #selector(HeartView.checkked(heart:)), for: .touchUpInside)
+        
     }
     
- 
+    @objc private func checkked(heart: UIControl){
+        print("presed")
+    }
     @objc private func tapped(_ tapGesture: UITapGestureRecognizer) {
         isChecked.toggle()
         setNeedsDisplay()
         sendActions(for: .valueChanged)
+        
     }
     
 }
