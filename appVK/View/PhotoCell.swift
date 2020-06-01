@@ -14,11 +14,31 @@ class PhotoCell: UICollectionViewCell {
     
     @IBOutlet var countOfLikes: UILabel!
     
-    public func configureHeart(countLikes: Int?, isFill: Bool ){
-        heartIsFillView.configure(likes: countLikes ?? 0, isLikedByUser: isFill)
-        countOfLikes.text = countLikes.flatMap(String.init)
-        
+    var likesCount: Int? {
+        didSet {
+            countOfLikes.text = likesCount.flatMap(String.init)
+        }
     }
     
+    public func configureHeart(countLikes: Int?, isFill: Bool ){
+        heartIsFillView.configure(likes: countLikes ?? 0, isLikedByUser: isFill)
+        //countOfLikes.text = countLikes.flatMap(String.init)
+        likesCount = countLikes
+        heartIsFillView.addTarget(self, action: #selector(likeTapped), for: .valueChanged)
+    }
+    
+    @objc private func likeTapped () {
+        guard let likesCount = likesCount else {return}
+    
+       
+        if  heartIsFillView.isChecked {
+            self.likesCount = likesCount + 1
+
+        } else {
+            if (likesCount > 0) {
+                self.likesCount = likesCount - 1
+            }
+        }
+    }
     
 }

@@ -99,9 +99,7 @@ class HeartView: UIControl {
         
     }
     
-    @objc private func checkked(heart: UIControl){
-        print("presed")
-    }
+
     @objc private func tapped(_ tapGesture: UITapGestureRecognizer) {
         isChecked.toggle()
         setNeedsDisplay()
