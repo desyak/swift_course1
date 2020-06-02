@@ -8,7 +8,16 @@
 
 import UIKit
 
-class myFriendsViewController: UITableViewController {
+class myFriendsViewController: UITableViewController, UISearchResultsUpdating {
+    
+    var searchResults = [Friend]()
+       let searchController = UISearchController(searchResultsController: nil)
+
+    
+    
+    
+    
+    
     var friends = [
         Friend(image: UIImage(named: "pikachu")!, name: "Иван Иванов"),
         Friend(image: UIImage(named: "pikachu")!, name: "Петя Петров"),
@@ -17,12 +26,44 @@ class myFriendsViewController: UITableViewController {
         Friend(image: UIImage(named: "pikachu")!, name: "Гена Геннадьев")
     ]
     
+ 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        searchController.searchResultsUpdater = self
+        self.definesPresentationContext = true
+
+        // Place the search bar in the table view's header.
+        self.tableView.tableHeaderView = searchController.searchBar
+
+        // Set the content offset to the height of the search bar's height
+        // to hide it when the view is first presented.
+        self.tableView.contentOffset = CGPoint(x: 0, y: searchController.searchBar.frame.height)
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         navigationController?.setNavigationBarHidden(false, animated: true)
+        
     }
 
+    func filterContent(for searchText: String) {
+        searchResults = friends.filter({( image: UIImage, name: String) -> Bool in
+            let match = name.range(of: searchText)
+            return (match != nil)
+        })
+    }
+
+    func updateSearchResults(for searchController: UISearchController) {
+        if let searchText = searchController.searchBar.text {
+            filterContent(for: searchText)
+            tableView.reloadData()
+        }
+    }
+    
+    
+    
     // MARK: - Table view data source
 
 //    override func numberOfSections(in tableView: UITableView) -> Int {
