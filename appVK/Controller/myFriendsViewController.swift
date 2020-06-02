@@ -101,15 +101,17 @@ class myFriendsViewController: UITableViewController, UISearchResultsUpdating {
         }
         
         override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let entry = searchController.isActive ? searchResults[indexPath.row] : friends[indexPath.row]
+            let firstChar = sortedFriends.keys.sorted()[indexPath.section]
+            let friends = sortedFriends[firstChar]!
+            let friend: Friend = friends[indexPath.row]
             
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "FriendCell", for: indexPath) as? FriendCell else {
                 preconditionFailure("FriendCell cannot be dequeued")
             }
 
             print("Section: " + String(indexPath.section) + ", row: " + String(indexPath.row))
-            let friendName = entry.name
-            let friendImage = entry.image
+            let friendName = friend.name
+            let friendImage = friend.image
             cell.friendNameLabel?.text = friendName
             cell.friendImageView?.image = friendImage
             
