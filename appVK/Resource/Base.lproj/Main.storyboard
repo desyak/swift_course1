@@ -354,13 +354,23 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6fF-pT-yqs" customClass="HeartView" customModule="appVK" customModuleProvider="target">
+                                            <rect key="frame" x="34" y="234" width="38" height="38"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="38" id="M7h-yN-Nsp"/>
+                                                <constraint firstAttribute="height" constant="38" id="SDb-Y7-k0h"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="bOZ-gm-xF7" firstAttribute="top" secondItem="ctG-3H-LvB" secondAttribute="top" constant="11" id="49d-S5-qfn"/>
                                         <constraint firstItem="CUh-Rl-1AC" firstAttribute="leading" secondItem="ctG-3H-LvB" secondAttribute="leadingMargin" id="6yA-iL-fuK"/>
+                                        <constraint firstItem="6fF-pT-yqs" firstAttribute="leading" secondItem="ctG-3H-LvB" secondAttribute="leading" constant="34" id="8SW-A2-5rp"/>
                                         <constraint firstItem="bOZ-gm-xF7" firstAttribute="centerX" secondItem="ctG-3H-LvB" secondAttribute="centerX" id="KMI-LP-9ZP"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="CUh-Rl-1AC" secondAttribute="bottom" constant="35" id="TT0-iA-ymT"/>
                                         <constraint firstItem="CUh-Rl-1AC" firstAttribute="top" secondItem="bOZ-gm-xF7" secondAttribute="bottom" constant="15" id="Ukq-TA-peu"/>
+                                        <constraint firstAttribute="bottom" secondItem="6fF-pT-yqs" secondAttribute="bottom" constant="1" id="pwf-ho-mmd"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="CUh-Rl-1AC" secondAttribute="trailing" id="uOG-oD-Dtl"/>
                                     </constraints>
                                 </tableViewCellContentView>
