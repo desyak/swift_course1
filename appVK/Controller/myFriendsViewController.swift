@@ -44,15 +44,14 @@ class myFriendsViewController: UITableViewController, UISearchResultsUpdating {
         // to hide it when the view is first presented.
         self.tableView.contentOffset = CGPoint(x: 0, y: searchController.searchBar.frame.height)
          navigationController?.setNavigationBarHidden(false, animated: true)
-        let unsortedFriends = searchController.isActive ? searchResults : friends
+        let unsortedFriends = searchController.isActive ? searchResults.sorted {$0.name < $1.name} : friends.sorted {$0.name < $1.name}
         self.sortedFriends = sort(friends: unsortedFriends )
     }
     
     private func sort(friends: [Friend]) -> [Character: [Friend]] {
         var friendDict = [Character: [Friend]]()
-        friends
-            .sorted { $0.name < $1.name }
-            .foreach { friend in
+        
+        friends.forEach { friend in
                 guard let firstChar = friend.name.first else {return}
                 if var thisCharFriend = friendDict[firstChar] {
                     thisCharFriend.append(friend)
@@ -85,39 +84,7 @@ class myFriendsViewController: UITableViewController, UISearchResultsUpdating {
     
     // MARK: - Table view data source
 
-    extension myFriendsViewController: UITableViewDataSource {
-        override func numberOfSections(in tableView: UITableView) -> Int {
-            return sortedFriends.keys.count
-        }
-        
-        override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-            let firstChar = sortedFriends.keys.sorted()[section]
-            return String(firstChar)
-        }
-        
-        override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            let keysSorted = sortedFriends.keys.sorted()
-            return sortedFriends[keysSorted[section]]?.count ?? 0
-        }
-        
-        override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let firstChar = sortedFriends.keys.sorted()[indexPath.section]
-            let friends = sortedFriends[firstChar]!
-            let friend: Friend = friends[indexPath.row]
-            
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "FriendCell", for: indexPath) as? FriendCell else {
-                preconditionFailure("FriendCell cannot be dequeued")
-            }
-
-            print("Section: " + String(indexPath.section) + ", row: " + String(indexPath.row))
-            let friendName = friend.name
-            let friendImage = friend.image
-            cell.friendNameLabel?.text = friendName
-            cell.friendImageView?.image = friendImage
-            
-
-            return cell
-        }
+    
     }
     
     
@@ -136,4 +103,39 @@ class myFriendsViewController: UITableViewController, UISearchResultsUpdating {
     }
     */
 
+
+
+extension myFriendsViewController {
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return sortedFriends.keys.count
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let firstChar = sortedFriends.keys.sorted()[section]
+        return String(firstChar)
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let keysSorted = sortedFriends.keys.sorted()
+        return sortedFriends[keysSorted[section]]?.count ?? 0
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let firstChar = sortedFriends.keys.sorted()[indexPath.section]
+        let friends = sortedFriends[firstChar]!
+        let friend: Friend = friends[indexPath.row]
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "FriendCell", for: indexPath) as? FriendCell else {
+            preconditionFailure("FriendCell cannot be dequeued")
+        }
+        
+        print("Section: " + String(indexPath.section) + ", row: " + String(indexPath.row))
+        let friendName = friend.name
+        let friendImage = friend.image
+        cell.friendNameLabel?.text = friendName
+        cell.friendImageView?.image = friendImage
+        
+        
+        return cell
+    }
 }

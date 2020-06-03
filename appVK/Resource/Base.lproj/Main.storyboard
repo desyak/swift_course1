@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xAY-Fm-egk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -23,7 +23,7 @@
                                 </constraints>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="kzh-lg-x4H">
-                                <rect key="frame" x="18" y="88" width="339" height="390"/>
+                                <rect key="frame" x="18" y="44" width="339" height="434"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пароль:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ptt-Jq-6J9">
                                         <rect key="frame" x="27.333333333333343" y="220" width="77" height="26"/>
@@ -107,19 +107,19 @@
                         <outlet property="loginScroll" destination="kzh-lg-x4H" id="P9P-Ip-CaV"/>
                         <outlet property="nameTextField" destination="srY-kJ-Ovd" id="n9i-OJ-0C4"/>
                         <outlet property="passTextField" destination="l9M-c8-fUP" id="m73-pz-cBo"/>
-                        <segue destination="Cb0-5y-AeK" kind="show" identifier="Login Segue" id="d8Z-lp-f5E"/>
+                        <segue destination="xAY-Fm-egk" kind="show" identifier="Login Segue" id="aki-K7-M4X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3242.4000000000001" y="136.69950738916256"/>
+            <point key="canvasLocation" x="1358" y="131"/>
         </scene>
         <!--Друзья-->
         <scene sceneID="bxO-ND-ipb">
             <objects>
                 <tableViewController id="tYj-JD-Wtp" customClass="myFriendsViewController" customModule="appVK" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleAspectFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="y39-t5-GtZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
@@ -222,7 +222,7 @@
             <objects>
                 <collectionViewController id="Rhd-Iq-8Dv" customClass="PhotoGalleryController" customModule="appVK" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Ohd-vO-gWZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="e6e-Iv-0KU">
@@ -304,7 +304,8 @@
         <!--My Wall-->
         <scene sceneID="Mdn-Wj-a2U">
             <objects>
-                <tabBarController id="Cb0-5y-AeK" customClass="myWall" customModule="appVK" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController modalPresentationStyle="fullScreen" id="Cb0-5y-AeK" customClass="myWall" customModule="appVK" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="dS0-Wp-tsm"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aaq-TB-dnF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -313,18 +314,35 @@
                     <connections>
                         <segue destination="tYj-JD-Wtp" kind="relationship" relationship="viewControllers" id="Mbm-rh-oOM"/>
                         <segue destination="4Ni-fz-L9m" kind="relationship" relationship="viewControllers" id="VjY-Fg-Y15"/>
+                        <segue destination="47Z-5f-DU5" kind="relationship" relationship="viewControllers" id="Ok9-vv-Osd"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c9V-Wd-pWh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4086" y="131"/>
         </scene>
+        <!--News-->
+        <scene sceneID="QzI-Bl-cra">
+            <objects>
+                <viewController id="47Z-5f-DU5" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ctY-ao-nNX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="MNS-YR-7l2"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="News" image="news" id="PGv-QB-hd6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pKD-BP-YXN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4105" y="934"/>
+        </scene>
         <!--Группы-->
         <scene sceneID="wrS-25-OdS">
             <objects>
                 <tableViewController id="4Ni-fz-L9m" customClass="myGroupViewController" customModule="appVK" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9iH-Pr-9Yo">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="zKr-Sz-uTl">
@@ -395,7 +413,7 @@
             <objects>
                 <tableViewController id="Qq2-Jt-p2B" customClass="allGroupsViewController" customModule="appVK" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="rkk-Iv-mcR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
@@ -452,15 +470,16 @@
         <!--Navigation Controller-->
         <scene sceneID="cT7-AW-9G3">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xAY-Fm-egk" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="xAY-Fm-egk" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="xl9-BQ-FfK"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JPc-yB-iIc">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="INZ-kF-bzF"/>
+                        <segue destination="Cb0-5y-AeK" kind="relationship" relationship="rootViewController" id="K9n-gR-I6G"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ouI-0T-XrI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -472,5 +491,6 @@
         <image name="background" width="1024" height="2300"/>
         <image name="friends" width="28" height="28"/>
         <image name="group" width="28" height="28"/>
+        <image name="news" width="28" height="28"/>
     </resources>
 </document>
