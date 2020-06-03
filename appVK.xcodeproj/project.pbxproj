@@ -26,6 +26,9 @@
 		51CFC5A0238329AD00099493 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CFC59F238329AD00099493 /* PhotoCell.swift */; };
 		51CFC5A223832C4500099493 /* PhotoGalleryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CFC5A123832C4500099493 /* PhotoGalleryController.swift */; };
 		51D223BD2367663000BAE5C3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D223BC2367663000BAE5C3 /* LoginViewController.swift */; };
+		51E990282487B80E00502EE8 /* myNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E990272487B80E00502EE8 /* myNewsViewController.swift */; };
+		51E9902A2487B85000502EE8 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E990292487B85000502EE8 /* News.swift */; };
+		51E9902C2487C00D00502EE8 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E9902B2487C00D00502EE8 /* NewsCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +53,9 @@
 		51CFC59F238329AD00099493 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		51CFC5A123832C4500099493 /* PhotoGalleryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGalleryController.swift; sourceTree = "<group>"; };
 		51D223BC2367663000BAE5C3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		51E990272487B80E00502EE8 /* myNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myNewsViewController.swift; sourceTree = "<group>"; };
+		51E990292487B85000502EE8 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		51E9902B2487C00D00502EE8 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,7 @@
 			children = (
 				51C17E422378925500B94FA8 /* myWall.swift */,
 				5173D5C0238172C000E58DA5 /* myFriendsViewController.swift */,
+				51E990272487B80E00502EE8 /* myNewsViewController.swift */,
 				51D223BC2367663000BAE5C3 /* LoginViewController.swift */,
 				51CFC5A123832C4500099493 /* PhotoGalleryController.swift */,
 				513B34552393C57A003D3F88 /* myGroupViewController.swift */,
@@ -125,6 +132,7 @@
 				513B34532393C500003D3F88 /* GroupCell.swift */,
 				513B345D23970CDB003D3F88 /* AllCell.swift */,
 				5176999923996D1F000BF20C /* HeartView.swift */,
+				51E9902B2487C00D00502EE8 /* NewsCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -133,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				5173D5C2238173B600E58DA5 /* Friend.swift */,
+				51E990292487B85000502EE8 /* News.swift */,
 				513B34592393F1A0003D3F88 /* Group.swift */,
 				517AF930239CFC9500E3DCD7 /* Photo.swift */,
 			);
@@ -219,8 +228,10 @@
 				513B34582393C59E003D3F88 /* allGroupsViewController.swift in Sources */,
 				513B34562393C57A003D3F88 /* myGroupViewController.swift in Sources */,
 				51CFC5A223832C4500099493 /* PhotoGalleryController.swift in Sources */,
+				51E990282487B80E00502EE8 /* myNewsViewController.swift in Sources */,
 				51CFC5A0238329AD00099493 /* PhotoCell.swift in Sources */,
 				51CFC59C23829FE400099493 /* FriendCell.swift in Sources */,
+				51E9902A2487B85000502EE8 /* News.swift in Sources */,
 				51D223BD2367663000BAE5C3 /* LoginViewController.swift in Sources */,
 				513B345A2393F1A0003D3F88 /* Group.swift in Sources */,
 				513B345E23970CDB003D3F88 /* AllCell.swift in Sources */,
@@ -228,6 +239,7 @@
 				517AF931239CFC9500E3DCD7 /* Photo.swift in Sources */,
 				51C17E432378925500B94FA8 /* myWall.swift in Sources */,
 				513B34542393C500003D3F88 /* GroupCell.swift in Sources */,
+				51E9902C2487C00D00502EE8 /* NewsCell.swift in Sources */,
 				5173D5C1238172C000E58DA5 /* myFriendsViewController.swift in Sources */,
 				5173D5C3238173B600E58DA5 /* Friend.swift in Sources */,
 				5154748F23672A62009F57BA /* AppDelegate.swift in Sources */,
