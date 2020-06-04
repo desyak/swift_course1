@@ -11,7 +11,7 @@ import UIKit
 class News {
     var image = [UIImage]()
     let title: String
-    let textNews : String
+    var textNews : String
     
     init(image: [UIImage], title: String , textNews: String) {
         self.image = image

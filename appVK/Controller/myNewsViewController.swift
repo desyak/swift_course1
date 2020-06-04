@@ -14,7 +14,7 @@ class myNewsViewController: UITableViewController {
     let searchController = UISearchController(searchResultsController: nil)
     
     let news = [
-        News(title: "Иван Иванов", textNews: "Some text"),
+        News(image: [UIImage(named: "pikachu")!], title: "Иван Иванов", textNews: "Some text" ),
         News(title: "Петя Петров", textNews: "Some text"),
         News(title: "Вася Васин", textNews: "Some text"),
         News(title: "Костя Костин", textNews: "Some text"),
@@ -73,8 +73,36 @@ extension myNewsViewController {
 
         let cellnews = searchController.isActive ? searchResults[indexPath.row] : news[indexPath.row]
 
-        cell.textNews.text = cellnews.textNews
+        //cell.textNews.text = cellnews.textNews
+        
+        
         cell.titleNews.text = cellnews.title
+        if cellnews.image.count > 0 {
+            
+            let textAttachment = NSTextAttachment()
+            textAttachment.image = cellnews.image[0]
+            textAttachment.bounds = CGRect(x: 0, y: 0, width: 50, height: 50)
+         
+           
+            let range = NSMakeRange(cellnews.textNews.count, 0)
+            let atributedstring = NSMutableAttributedString(string: cellnews.textNews)
+            let attrStringWithImage = NSAttributedString(attachment: textAttachment)
+            atributedstring.replaceCharacters(in: range, with: attrStringWithImage)
+            
+            
+            
+            
+            
+            
+            
+            cell.textNews.attributedText = atributedstring
+        } else {
+            cell.textNews.text = cellnews.textNews
+            
+        }
+        
+        
+        
         return cell
     }
     
