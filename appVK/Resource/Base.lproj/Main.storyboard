@@ -330,24 +330,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsCell" rowHeight="273" id="E0W-Cu-X4N" customClass="NewsCell" customModule="appVK" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="273"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsCell" rowHeight="310" id="E0W-Cu-X4N" customClass="NewsCell" customModule="appVK" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="310"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="E0W-Cu-X4N" id="ctG-3H-LvB">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="273"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="310"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOZ-gm-xF7">
-                                            <rect key="frame" x="154" y="11" width="67" height="46"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOZ-gm-xF7">
+                                            <rect key="frame" x="154" y="9" width="67" height="32.333333333333336"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="27"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="CUh-Rl-1AC">
-                                            <rect key="frame" x="16" y="58.333333333333329" width="343" height="168.66666666666669"/>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="CUh-Rl-1AC">
+                                            <rect key="frame" x="16" y="51.333333333333343" width="343" height="200"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="999" constant="100" id="s7Q-V5-Ejl"/>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="999" constant="120" id="s7Q-V5-Ejl"/>
                                             </constraints>
                                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                             <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -355,26 +355,35 @@
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6fF-pT-yqs" customClass="HeartView" customModule="appVK" customModuleProvider="target">
-                                            <rect key="frame" x="34" y="234" width="38" height="38"/>
+                                            <rect key="frame" x="75" y="267" width="38" height="38"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="38" id="M7h-yN-Nsp"/>
                                                 <constraint firstAttribute="height" constant="38" id="SDb-Y7-k0h"/>
                                             </constraints>
                                         </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="spt-qG-Fy1">
+                                            <rect key="frame" x="32" y="279" width="59" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="bOZ-gm-xF7" firstAttribute="top" secondItem="ctG-3H-LvB" secondAttribute="top" constant="11" id="49d-S5-qfn"/>
+                                        <constraint firstItem="bOZ-gm-xF7" firstAttribute="top" secondItem="ctG-3H-LvB" secondAttribute="top" constant="9" id="49d-S5-qfn"/>
                                         <constraint firstItem="CUh-Rl-1AC" firstAttribute="leading" secondItem="ctG-3H-LvB" secondAttribute="leadingMargin" id="6yA-iL-fuK"/>
-                                        <constraint firstItem="6fF-pT-yqs" firstAttribute="leading" secondItem="ctG-3H-LvB" secondAttribute="leading" constant="34" id="8SW-A2-5rp"/>
-                                        <constraint firstItem="bOZ-gm-xF7" firstAttribute="centerX" secondItem="ctG-3H-LvB" secondAttribute="centerX" id="KMI-LP-9ZP"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="CUh-Rl-1AC" secondAttribute="bottom" constant="35" id="TT0-iA-ymT"/>
-                                        <constraint firstItem="CUh-Rl-1AC" firstAttribute="top" secondItem="bOZ-gm-xF7" secondAttribute="bottom" constant="15" id="Ukq-TA-peu"/>
-                                        <constraint firstAttribute="bottom" secondItem="6fF-pT-yqs" secondAttribute="bottom" constant="1" id="pwf-ho-mmd"/>
+                                        <constraint firstItem="6fF-pT-yqs" firstAttribute="leading" secondItem="ctG-3H-LvB" secondAttribute="leading" constant="75" id="8SW-A2-5rp"/>
+                                        <constraint firstItem="CUh-Rl-1AC" firstAttribute="top" secondItem="bOZ-gm-xF7" secondAttribute="bottom" constant="10" id="Ukq-TA-peu"/>
+                                        <constraint firstAttribute="bottom" secondItem="6fF-pT-yqs" secondAttribute="bottom" priority="999" constant="5" id="XFP-l2-UAi"/>
+                                        <constraint firstItem="bOZ-gm-xF7" firstAttribute="centerX" secondItem="ctG-3H-LvB" secondAttribute="centerX" id="q2G-0B-PbW"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="CUh-Rl-1AC" secondAttribute="trailing" id="uOG-oD-Dtl"/>
+                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="CUh-Rl-1AC" secondAttribute="bottom" priority="999" constant="35" id="yXR-mJ-2Sp"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="heartIsFillView" destination="6fF-pT-yqs" id="uu2-hT-atC"/>
+                                    <outlet property="likes" destination="spt-qG-Fy1" id="jaB-JA-aHn"/>
                                     <outlet property="textNews" destination="CUh-Rl-1AC" id="I4M-7Z-jgC"/>
                                     <outlet property="titleNews" destination="bOZ-gm-xF7" id="1SI-wd-5nm"/>
                                 </connections>

@@ -14,10 +14,10 @@ class myNewsViewController: UITableViewController {
     let searchController = UISearchController(searchResultsController: nil)
     
     let news = [
-        News(image: [UIImage(named: "pikachu")!], title: "Иван Иванов", textNews: "Some text" ),
+        News(image: [UIImage(named: "pikachu")!], title: "Иван Иванов", textNews: "Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text", isChecked: true , countChecked: 50 ),
         News(title: "Петя Петров", textNews: "Some text"),
         News(title: "Вася Васин", textNews: "Some text"),
-        News(title: "Костя Костин", textNews: "Some text"),
+        News(title: "Костя Костин", textNews: "Some text", isChecked: true , countChecked: 100),
         News(title: "Гена Геннадьев", textNews: "Some text")
     ]
     
@@ -51,6 +51,8 @@ class myNewsViewController: UITableViewController {
     // MARK: - Table view data source
 
 
+        self.tableView.rowHeight = UITableView.automaticDimension
+        self.tableView.estimatedRowHeight = 100
 
 }
 }
@@ -73,6 +75,10 @@ extension myNewsViewController {
 
         let cellnews = searchController.isActive ? searchResults[indexPath.row] : news[indexPath.row]
 
+        
+        let countsLikes: Int = cellnews.countChecked ?? 0
+        let isNewsChecked = cellnews.isChecked ?? false
+        cell.configureHeart(countLikes: countsLikes , isFill: isNewsChecked)
         //cell.textNews.text = cellnews.textNews
         
         
@@ -81,7 +87,8 @@ extension myNewsViewController {
             
             let textAttachment = NSTextAttachment()
             textAttachment.image = cellnews.image[0]
-            textAttachment.bounds = CGRect(x: 0, y: 0, width: 50, height: 50)
+            let scale = cellnews.image[0].size.height/cellnews.image[0].size.width
+            textAttachment.bounds = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.width * scale)
          
            
             let range = NSMakeRange(cellnews.textNews.count, 0)
@@ -94,7 +101,7 @@ extension myNewsViewController {
             
             
             
-            
+           
             cell.textNews.attributedText = atributedstring
         } else {
             cell.textNews.text = cellnews.textNews
