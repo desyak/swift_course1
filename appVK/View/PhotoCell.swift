@@ -27,10 +27,12 @@ class PhotoCell: UICollectionViewCell {
         heartIsFillView.addTarget(self, action: #selector(likeTapped), for: .valueChanged)
     }
     
+
+    
     @objc private func likeTapped () {
         guard let likesCount = likesCount else {return}
     
-       
+        
         if  heartIsFillView.isChecked {
             self.likesCount = likesCount + 1
 

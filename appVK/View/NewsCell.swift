@@ -20,6 +20,7 @@ class NewsCell: UITableViewCell {
         // Initialization code
     }
 
+    
     var likesCount: Int? {
         didSet {
             likes.text = likesCount.flatMap(String.init)

@@ -42,6 +42,7 @@ class myNewsViewController: UITableViewController {
     }
 
     
+    
     func filterContent(for searchText: String) {
         searchResults = news.filter({( news: News) -> Bool in
             let match = news.title.range(of: searchText)
@@ -123,5 +124,7 @@ extension myNewsViewController: UISearchResultsUpdating {
         }
     }
     }
-    
+
+
+ 
 
