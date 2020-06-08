@@ -9,7 +9,7 @@
 import UIKit
 
 
-@IBDesignable class AvatarView: UIView {
+class AvatarView: UIView {
     @IBOutlet var shadowView: UIView!
     @IBOutlet var friendImageView: UIImageView!
     

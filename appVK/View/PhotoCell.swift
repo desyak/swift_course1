@@ -13,6 +13,17 @@ class PhotoCell: UICollectionViewCell {
     @IBOutlet var galleryImage: UIImageView!
     
     @IBOutlet var countOfLikes: UILabel!
+    @IBAction func pushPhoto(_ sender: Any) {
+        UIView.animate(withDuration: 0.5,
+                       delay: 0,
+                       usingSpringWithDamping: 0.5,
+                       initialSpringVelocity: 0,
+                       options: [],
+                       animations: {
+            self.galleryImage.frame.origin.y -= 100
+        })
+
+    }
     
     var likesCount: Int? {
         didSet {

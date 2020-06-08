@@ -10,7 +10,7 @@ import UIKit
 
 class FriendCell: UITableViewCell {
 
-
+    
     @IBOutlet var friendImageView: UIImageView!
     @IBOutlet var friendNameLabel: UILabel!
 
@@ -21,6 +21,16 @@ class FriendCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+        
+        UIView.animate(withDuration: 0.5,
+                       delay: 0,
+                       usingSpringWithDamping: 0.5,
+                       initialSpringVelocity: 0,
+                       options: [.autoreverse],
+                       animations: {
+            self.friendImageView.frame.origin.y -= 100
+        })
+
     }
 
     
