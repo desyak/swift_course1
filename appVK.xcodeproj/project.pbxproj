@@ -29,6 +29,7 @@
 		51E990282487B80E00502EE8 /* myNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E990272487B80E00502EE8 /* myNewsViewController.swift */; };
 		51E9902A2487B85000502EE8 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E990292487B85000502EE8 /* News.swift */; };
 		51E9902C2487C00D00502EE8 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E9902B2487C00D00502EE8 /* NewsCell.swift */; };
+		51FA64E0248ECB08009E7F5F /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FA64DF248ECB08009E7F5F /* ProgressBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		51E990272487B80E00502EE8 /* myNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myNewsViewController.swift; sourceTree = "<group>"; };
 		51E990292487B85000502EE8 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		51E9902B2487C00D00502EE8 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
+		51FA64DF248ECB08009E7F5F /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				513B345D23970CDB003D3F88 /* AllCell.swift */,
 				5176999923996D1F000BF20C /* HeartView.swift */,
 				51E9902B2487C00D00502EE8 /* NewsCell.swift */,
+				51FA64DF248ECB08009E7F5F /* ProgressBar.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 				5176999A23996D1F000BF20C /* HeartView.swift in Sources */,
 				517AF931239CFC9500E3DCD7 /* Photo.swift in Sources */,
 				51C17E432378925500B94FA8 /* myWall.swift in Sources */,
+				51FA64E0248ECB08009E7F5F /* ProgressBar.swift in Sources */,
 				513B34542393C500003D3F88 /* GroupCell.swift in Sources */,
 				51E9902C2487C00D00502EE8 /* NewsCell.swift in Sources */,
 				5173D5C1238172C000E58DA5 /* myFriendsViewController.swift in Sources */,

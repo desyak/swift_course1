@@ -12,6 +12,7 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         // Do any additional setup after loading the view.
         let tapGR = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
@@ -41,7 +42,8 @@ class LoginViewController: UIViewController {
                 return
         }
         
-        performSegue(withIdentifier: "Login Segue", sender: nil)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) { self.performSegue(withIdentifier: "Login Segue", sender: nil) }
+        progress()
     }
     
     @objc func willShowKeyboard(_ notification: Notification){
@@ -58,14 +60,57 @@ class LoginViewController: UIViewController {
     @objc func viewTapped(){
         view.endEditing(true)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func progress() {
+        let point1 = ProgressBar(frame: CGRect.init(
+            x: 0, y: 200,
+            width: 50,
+            height: 50))
+        point1.center.x = self.view.frame.width / 2 - 70
+        point1.alpha = 0
+        
+        let point2 = ProgressBar(frame: CGRect.init(
+            x: 0, y: 200,
+            width: 50,
+            height: 50))
+        point2.center.x = self.view.frame.width / 2
+        point2.alpha = 0
+        
+        let point3 = ProgressBar(frame: CGRect.init(
+            x: 0, y: 200,
+            width: 50,
+            height: 50))
+        point3.center.x = self.view.frame.width / 2 + 70
+        point3.alpha = 0
+        
+        self.view.addSubview(point1)
+        self.view.addSubview(point2)
+        self.view.addSubview(point3)
+        
+        UIView.animateKeyframes(withDuration: 1.2, delay: 0, options: [ .repeat ], animations: {
+            UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.4) {
+                point1.alpha = 1
+                self.view.alpha = 0.7
+            }
+            UIView.addKeyframe(withRelativeStartTime: 0.4, relativeDuration: 0.4) {
+                point1.alpha = 0
+                point2.alpha = 1
+                self.view.alpha = 0.3
+            }
+            UIView.addKeyframe(withRelativeStartTime: 0.8, relativeDuration: 0.4) {
+                point2.alpha = 0
+                point3.alpha = 1
+                self.view.alpha = 0
+            }
+        })
     }
-    */
-
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

@@ -101,7 +101,10 @@ class HeartView: UIControl {
     
 
     @objc private func tapped(_ tapGesture: UITapGestureRecognizer) {
-        isChecked.toggle()
+        
+        UIView.transition(with: self, duration: 0.25, options: .transitionFlipFromLeft, animations: {
+            self.isChecked.toggle()
+        }, completion: nil)
         setNeedsDisplay()
         sendActions(for: .valueChanged)
         
@@ -109,3 +112,5 @@ class HeartView: UIControl {
     
 
 }
+
+
