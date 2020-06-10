@@ -30,7 +30,7 @@ class AvatarView: UIView {
     */
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+     
         shadowView.layer.shadowColor = heartShadowColor.cgColor
         shadowView.layer.shadowOffset = .zero
         shadowView.layer.shadowRadius = heartShadowRadius

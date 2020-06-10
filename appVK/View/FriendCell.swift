@@ -17,23 +17,40 @@ class FriendCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        friendImageView.isUserInteractionEnabled = true
+    
+        //let tap = UITapGestureRecognizer(target: self, action: #selector(photoTap()))
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(photoTap))
+        friendImageView.addGestureRecognizer(tap)
+        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
+//        UIView.animate(withDuration: 0.5,
+//                       delay: 0,
+//                       usingSpringWithDamping: 0.5,
+//                       initialSpringVelocity: 0,
+//                       options: [.autoreverse],
+//                       animations: {
+//            self.friendImageView.frame.origin.y -= 100
+//        })
+
+    }
+
+    @objc private func photoTap() {
+        let aspectPhoto = friendImageView.frame.size.width / friendImageView.frame.size.height
+        let sizePhoto: CGSize = CGSize(width: friendImageView.frame.size.width + 20, height: (friendImageView.frame.size.width + 20)*aspectPhoto)
         UIView.animate(withDuration: 0.5,
                        delay: 0,
                        usingSpringWithDamping: 0.5,
                        initialSpringVelocity: 0,
                        options: [.autoreverse],
                        animations: {
-            self.friendImageView.frame.origin.y -= 100
+                        self.friendImageView.frame.size = sizePhoto
         })
-
     }
-
-    
     
     
 

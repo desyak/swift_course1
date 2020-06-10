@@ -14,6 +14,7 @@ class myFriendsViewController: UITableViewController, UISearchResultsUpdating {
     private var searchResults = [Friend]()
     let searchController = UISearchController(searchResultsController: nil)
     private var sortedFriends = [Character: [Friend]]()
+    @IBOutlet var photoFriend: UIImage!
     
     
     
@@ -46,6 +47,10 @@ class myFriendsViewController: UITableViewController, UISearchResultsUpdating {
         navigationController?.setNavigationBarHidden(false, animated: true)
         let unsortedFriends = searchController.isActive ? searchResults.sorted {$0.name < $1.name} : friends.sorted {$0.name < $1.name}
         self.sortedFriends = sort(friends: unsortedFriends )
+        
+        
+      
+        
     }
     
     
@@ -124,4 +129,6 @@ extension myFriendsViewController {
         
         return cell
     }
+    
+
 }

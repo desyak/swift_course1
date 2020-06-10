@@ -13,16 +13,13 @@ class PhotoCell: UICollectionViewCell {
     @IBOutlet var galleryImage: UIImageView!
     
     @IBOutlet var countOfLikes: UILabel!
-    @IBAction func pushPhoto(_ sender: Any) {
-        UIView.animate(withDuration: 0.5,
-                       delay: 0,
-                       usingSpringWithDamping: 0.5,
-                       initialSpringVelocity: 0,
-                       options: [],
-                       animations: {
-            self.galleryImage.frame.origin.y -= 100
-        })
-
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(photoTap))
+        galleryImage.addGestureRecognizer(tap)
+        
+        
     }
     
     var likesCount: Int? {
@@ -52,6 +49,19 @@ class PhotoCell: UICollectionViewCell {
                 self.likesCount = likesCount - 1
             }
         }
+    }
+    
+    @objc private func photoTap() {
+        let aspectPhoto = galleryImage.frame.size.width / galleryImage.frame.size.height
+        let sizePhoto: CGSize = CGSize(width: galleryImage.frame.size.width + 20, height: (galleryImage.frame.size.width + 20)*aspectPhoto)
+        UIView.animate(withDuration: 0.5,
+                       delay: 0,
+                       usingSpringWithDamping: 0.5,
+                       initialSpringVelocity: 0,
+                       options: [.autoreverse],
+                       animations: {
+                        self.galleryImage.frame.size = sizePhoto
+        })
     }
     
 }

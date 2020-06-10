@@ -42,7 +42,7 @@ class LoginViewController: UIViewController {
                 return
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) { self.performSegue(withIdentifier: "Login Segue", sender: nil) }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { self.performSegue(withIdentifier: "Login Segue", sender: nil) }
         progress()
     }
     
