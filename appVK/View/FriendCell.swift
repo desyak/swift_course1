@@ -21,6 +21,7 @@ class FriendCell: UITableViewCell {
     
         //let tap = UITapGestureRecognizer(target: self, action: #selector(photoTap()))
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(photoTap))
+        tap.numberOfTapsRequired = 2
         friendImageView.addGestureRecognizer(tap)
         
     }

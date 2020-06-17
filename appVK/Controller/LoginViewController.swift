@@ -87,19 +87,19 @@ class LoginViewController: UIViewController {
         self.view.addSubview(point3)
         
         UIView.animateKeyframes(withDuration: 1.2, delay: 0, options: [ .repeat ], animations: {
-            UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.4) {
+            UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.33) {
                 point1.alpha = 1
                 self.view.alpha = 0.7
             }
-            UIView.addKeyframe(withRelativeStartTime: 0.4, relativeDuration: 0.4) {
+            UIView.addKeyframe(withRelativeStartTime: 0.33, relativeDuration: 0.33) {
                 point1.alpha = 0
                 point2.alpha = 1
-                self.view.alpha = 0.3
+                self.view.alpha = 0.4
             }
-            UIView.addKeyframe(withRelativeStartTime: 0.8, relativeDuration: 0.4) {
+            UIView.addKeyframe(withRelativeStartTime: 0.66, relativeDuration: 0.33) {
                 point2.alpha = 0
                 point3.alpha = 1
-                self.view.alpha = 0
+                self.view.alpha = 0.15
             }
         })
     }

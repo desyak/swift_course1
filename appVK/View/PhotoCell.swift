@@ -16,8 +16,14 @@ class PhotoCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+<<<<<<< HEAD
         //let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(photoTap))
         //galleryImage.addGestureRecognizer(tap)
+=======
+        let tapToPhoto: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(photoTap))
+        tapToPhoto.numberOfTapsRequired = 2
+        galleryImage.addGestureRecognizer(tapToPhoto)
+>>>>>>> add
         
         
     }
