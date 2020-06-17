@@ -221,7 +221,7 @@
         <scene sceneID="qpb-nn-Ie1">
             <objects>
                 <collectionViewController id="Rhd-Iq-8Dv" customClass="PhotoGalleryController" customModule="appVK" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Ohd-vO-gWZ">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" id="Ohd-vO-gWZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -287,6 +287,7 @@
                                     <outlet property="countOfLikes" destination="ykQ-md-a5e" id="8nY-PI-tLt"/>
                                     <outlet property="galleryImage" destination="Bh4-uX-qpq" id="AJD-bd-iCl"/>
                                     <outlet property="heartIsFillView" destination="cdb-VG-AOO" id="tfm-Jm-0tA"/>
+                                    <segue destination="ggG-UF-Rz4" kind="show" id="Oem-LO-Nfd"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -300,6 +301,53 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gwY-WT-u3t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6606" y="-288"/>
+        </scene>
+        <!--Photo View Controller-->
+        <scene sceneID="kT8-dN-GTV">
+            <objects>
+                <viewController id="ggG-UF-Rz4" customClass="PhotoViewController" customModule="appVK" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="J68-W8-91s">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AhA-Ik-itl">
+                                <rect key="frame" x="0.0" y="209" width="375" height="340"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rUE-yR-4wT">
+                                <rect key="frame" x="0.0" y="209" width="375" height="340"/>
+                            </imageView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="yMw-tB-8y2">
+                                <rect key="frame" x="50" y="584" width="275" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="bK4-VW-0bj"/>
+                                </constraints>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="AhA-Ik-itl" firstAttribute="leading" secondItem="wdy-1B-CMn" secondAttribute="leading" id="0Wx-sR-bOO"/>
+                            <constraint firstItem="rUE-yR-4wT" firstAttribute="centerY" secondItem="J68-W8-91s" secondAttribute="centerY" id="0aC-m8-MrE"/>
+                            <constraint firstItem="AhA-Ik-itl" firstAttribute="centerY" secondItem="J68-W8-91s" secondAttribute="centerY" id="1X4-Ep-WCf"/>
+                            <constraint firstItem="wdy-1B-CMn" firstAttribute="bottom" secondItem="yMw-tB-8y2" secondAttribute="bottom" priority="996" constant="100" id="3KF-Jo-Dcj"/>
+                            <constraint firstItem="yMw-tB-8y2" firstAttribute="top" secondItem="AhA-Ik-itl" secondAttribute="bottom" constant="35" id="3uY-Ok-Llw"/>
+                            <constraint firstItem="rUE-yR-4wT" firstAttribute="leading" secondItem="wdy-1B-CMn" secondAttribute="leading" id="9Ht-0S-3eD"/>
+                            <constraint firstItem="wdy-1B-CMn" firstAttribute="trailing" secondItem="yMw-tB-8y2" secondAttribute="trailing" constant="50" id="PUh-BS-fhb"/>
+                            <constraint firstItem="wdy-1B-CMn" firstAttribute="trailing" secondItem="rUE-yR-4wT" secondAttribute="trailing" id="Q7p-yO-Tp4"/>
+                            <constraint firstItem="yMw-tB-8y2" firstAttribute="leading" secondItem="wdy-1B-CMn" secondAttribute="leading" constant="50" id="XkS-0m-sTh"/>
+                            <constraint firstItem="wdy-1B-CMn" firstAttribute="trailing" secondItem="AhA-Ik-itl" secondAttribute="trailing" id="ihd-RB-8UT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wdy-1B-CMn"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="eAl-DQ-EA2"/>
+                    <connections>
+                        <outlet property="bigPhoto1" destination="AhA-Ik-itl" id="OUY-Ct-aq1"/>
+                        <outlet property="bigPhoto2" destination="rUE-yR-4wT" id="kGc-AP-hHG"/>
+                        <outlet property="photoNumber" destination="yMw-tB-8y2" id="2Tl-b4-heh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cvU-Db-sCe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7506" y="-284"/>
         </scene>
         <!--My Wall-->
         <scene sceneID="Mdn-Wj-a2U">

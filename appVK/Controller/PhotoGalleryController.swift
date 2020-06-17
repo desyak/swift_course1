@@ -74,6 +74,17 @@ class PhotoGalleryController: UICollectionViewController {
         return cell
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let photoViewController = segue.destination as? PhotoViewController {
+            photoViewController.photos = photos
+            let iPath = self.collectionView.indexPathsForSelectedItems
+            let indexPath : NSIndexPath = iPath![0] as NSIndexPath
+            let rowIndex = indexPath.row
+            print("row index = \(indexPath)")
+            photoViewController.rowIndex = rowIndex
+            
+        }
+    }
     // MARK: UICollectionViewDelegate
 
     /*
