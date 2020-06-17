@@ -9,8 +9,8 @@
 import UIKit
 
 class PhotoViewController: UIViewController {
-
-
+    
+    
     @IBOutlet var bigPhoto1: UIImageView!
     @IBOutlet var bigPhoto2: UIImageView!
     @IBOutlet var photoNumber: UIPageControl!
@@ -20,13 +20,13 @@ class PhotoViewController: UIViewController {
     var photos = [Photo]()
     var rowIndex: Int? = nil
     
-
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
         bigPhoto1.isHidden = false
-        bigPhoto2.isHidden = true
+        bigPhoto2.isHidden = false
         frontImage = photos[rowIndex!].idPhoto
         backImage = photos[rowIndex!].idPhoto
         let imageRatio = frontImage.size.width/frontImage.size.height
@@ -43,61 +43,102 @@ class PhotoViewController: UIViewController {
         //let recogniser1 = UIPanGestureRecognizer.init(target: self, action: #selector(photoPinch1(gesture: )))
         
         let recogniser1 = UISwipeGestureRecognizer(target: self, action: #selector(photoPinch1(gesture: )))
+        recogniser1.direction =  .right
+        let recogniser2 = UISwipeGestureRecognizer(target: self, action: #selector(photoPinch1(gesture: )))
+        recogniser2.direction = .left
         //recogniser1.maximumNumberOfTouches = 1
-        bigPhoto1.addGestureRecognizer(recogniser1)
+        bigPhoto2.addGestureRecognizer(recogniser2)
+        bigPhoto2.addGestureRecognizer(recogniser1)
         // Do any additional setup after loading the view.
     }
     
     
-
+    
     @objc func photoPinch1(gesture: UISwipeGestureRecognizer) {
         let direction = gesture.direction
-        //let direction = gesture.translation(in: self.view)
-        if direction == .right {
-            print("to the rigth")
+        
+
+        if direction == .left {
             if rowIndex! <= (photos.count - 2) {
-                backImage = photos[(rowIndex)!+1].idPhoto
+                rowIndex! += 1
+                backImage = photos[rowIndex!].idPhoto
                 bigPhoto2.image = backImage
-                bigPhoto2.isHidden.toggle()
-                bigPhoto1.isHidden.toggle()
-                UIView.transition(from: bigPhoto1, to: bigPhoto2, duration: 2, options: .curveEaseInOut, completion: nil)
+                let swipeRightOld = CABasicAnimation(keyPath: "position.x")
+                swipeRightOld.toValue = 0 - view.frame.size.width/2
+                swipeRightOld.duration = 1
+                bigPhoto2.layer.add(swipeRightOld, forKey: nil)
+                
+                let swipeRightNew = CABasicAnimation(keyPath: "position.x")
+                swipeRightNew.toValue =  view.frame.size.width/2
+                swipeRightNew.fromValue = view.frame.size.width + view.frame.size.width/2
+                swipeRightNew.duration = 1
+                bigPhoto1.layer.add(swipeRightNew, forKey: nil)
+                
+                
+
                 
             } else {
+                rowIndex = 0
                 backImage = photos[0].idPhoto
                 bigPhoto2.image = backImage
-                bigPhoto2.isHidden.toggle()
-                bigPhoto1.isHidden.toggle()
-                UIView.transition(from: bigPhoto1, to: bigPhoto2, duration: 2, options: .curveEaseInOut, completion: nil)
+                let swipeRightOld = CABasicAnimation(keyPath: "position.x")
+                swipeRightOld.toValue = 0 - view.frame.size.width/2
+                swipeRightOld.duration = 1
+                bigPhoto2.layer.add(swipeRightOld, forKey: nil)
+                
+                let swipeRightNew = CABasicAnimation(keyPath: "position.x")
+                swipeRightNew.toValue =  view.frame.size.width/2
+                swipeRightNew.fromValue = view.frame.size.width + view.frame.size.width/2
+                swipeRightNew.duration = 1
+                bigPhoto1.layer.add(swipeRightNew, forKey: nil)
+                
             }
-        } else {
-            print("to the left")
+        } else if direction == .right {
             if rowIndex! != 0 {
-                backImage = photos[(rowIndex)!-1].idPhoto
+                rowIndex! -= 1
+                backImage = photos[rowIndex!].idPhoto
                 bigPhoto2.image = backImage
-                bigPhoto2.isHidden.toggle()
-                bigPhoto1.isHidden.toggle()
-                UIView.transition(from: bigPhoto1, to: bigPhoto2, duration: 2, options: .curveEaseInOut, completion: nil)
+                let swipeRightOld = CABasicAnimation(keyPath: "position.x")
+                swipeRightOld.toValue = view.frame.size.width + view.frame.size.width/2
+                swipeRightOld.duration = 1
+                bigPhoto2.layer.add(swipeRightOld, forKey: nil)
+                
+                let swipeRightNew = CABasicAnimation(keyPath: "position.x")
+                swipeRightNew.toValue =  view.frame.size.width/2
+                swipeRightNew.fromValue = 0 - view.frame.size.width/2
+                swipeRightNew.duration = 1
+                bigPhoto1.layer.add(swipeRightNew, forKey: nil)
+                
                 
             } else {
-                backImage = photos[(photos.count - 1)].idPhoto
+                rowIndex = (photos.count - 1)
+                backImage = photos[rowIndex!].idPhoto
                 bigPhoto2.image = backImage
-                bigPhoto2.isHidden.toggle()
-                bigPhoto1.isHidden.toggle()
-                UIView.transition(from: bigPhoto1, to: bigPhoto2, duration: 2, options: .curveEaseInOut, completion: nil)
+                let swipeRightOld = CABasicAnimation(keyPath: "position.x")
+                swipeRightOld.toValue = view.frame.size.width + view.frame.size.width/2
+                swipeRightOld.duration = 1
+                bigPhoto2.layer.add(swipeRightOld, forKey: nil)
+                
+                let swipeRightNew = CABasicAnimation(keyPath: "position.x")
+                swipeRightNew.toValue =  view.frame.size.width/2
+                swipeRightNew.fromValue = 0 - view.frame.size.width/2
+                swipeRightNew.duration = 1
+                bigPhoto1.layer.add(swipeRightNew, forKey: nil)
             }
         }
+        photoNumber.currentPage = rowIndex!
         view.setNeedsDisplay()
     }
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
 
 
