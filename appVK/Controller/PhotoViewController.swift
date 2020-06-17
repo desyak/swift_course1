@@ -40,7 +40,9 @@ class PhotoViewController: UIViewController {
         
         photoNumber.numberOfPages = photos.count
         photoNumber.currentPage = rowIndex!
-        let recogniser1 = UIPanGestureRecognizer.init(target: self, action: #selector(photoPinch1(gesture: )))
+        //let recogniser1 = UIPanGestureRecognizer.init(target: self, action: #selector(photoPinch1(gesture: )))
+        
+        let recogniser1 = UISwipeGestureRecognizer(target: self, action: #selector(photoPinch1(gesture: )))
         //recogniser1.maximumNumberOfTouches = 1
         bigPhoto1.addGestureRecognizer(recogniser1)
         // Do any additional setup after loading the view.
@@ -48,24 +50,43 @@ class PhotoViewController: UIViewController {
     
     
 
-    @objc func photoPinch1(gesture: UIPanGestureRecognizer) {
-        let direction = gesture.translation(in: self.view)
-        if direction.x > 0 {
-            self.backImage = photos[(rowIndex)!+1].idPhoto
-            bigPhoto2.image = backImage
-            bigPhoto2.isHidden.toggle()
-            bigPhoto1.isHidden.toggle()
-            UIView.transition(from: bigPhoto1, to: bigPhoto2, duration: 2, options: .curveEaseInOut, completion: nil)
+    @objc func photoPinch1(gesture: UISwipeGestureRecognizer) {
+        let direction = gesture.direction
+        //let direction = gesture.translation(in: self.view)
+        if direction == .right {
             print("to the rigth")
+            if rowIndex! <= (photos.count - 2) {
+                backImage = photos[(rowIndex)!+1].idPhoto
+                bigPhoto2.image = backImage
+                bigPhoto2.isHidden.toggle()
+                bigPhoto1.isHidden.toggle()
+                UIView.transition(from: bigPhoto1, to: bigPhoto2, duration: 2, options: .curveEaseInOut, completion: nil)
+                
+            } else {
+                backImage = photos[0].idPhoto
+                bigPhoto2.image = backImage
+                bigPhoto2.isHidden.toggle()
+                bigPhoto1.isHidden.toggle()
+                UIView.transition(from: bigPhoto1, to: bigPhoto2, duration: 2, options: .curveEaseInOut, completion: nil)
+            }
         } else {
-            self.backImage = photos[(rowIndex)!-1].idPhoto
-            bigPhoto2.image = backImage
-            bigPhoto2.isHidden.toggle()
-            bigPhoto1.isHidden.toggle()
-            UIView.transition(from: bigPhoto1, to: bigPhoto2, duration: 2, options: .curveEaseInOut, completion: nil)
             print("to the left")
+            if rowIndex! != 0 {
+                backImage = photos[(rowIndex)!-1].idPhoto
+                bigPhoto2.image = backImage
+                bigPhoto2.isHidden.toggle()
+                bigPhoto1.isHidden.toggle()
+                UIView.transition(from: bigPhoto1, to: bigPhoto2, duration: 2, options: .curveEaseInOut, completion: nil)
+                
+            } else {
+                backImage = photos[(photos.count - 1)].idPhoto
+                bigPhoto2.image = backImage
+                bigPhoto2.isHidden.toggle()
+                bigPhoto1.isHidden.toggle()
+                UIView.transition(from: bigPhoto1, to: bigPhoto2, duration: 2, options: .curveEaseInOut, completion: nil)
+            }
         }
-        
+        view.setNeedsDisplay()
     }
     /*
     // MARK: - Navigation
