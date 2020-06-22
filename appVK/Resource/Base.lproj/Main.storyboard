@@ -117,7 +117,7 @@
         <!--Друзья-->
         <scene sceneID="bxO-ND-ipb">
             <objects>
-                <tableViewController id="tYj-JD-Wtp" customClass="myFriendsViewController" customModule="appVK" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="tYj-JD-Wtp" customClass="MyFriendsViewController" customModule="appVK" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleAspectFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="y39-t5-GtZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -172,7 +172,7 @@
                                             </connections>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39E-D5-dbE">
-                                            <rect key="frame" x="206" y="50.666666666666664" width="41.666666666666657" height="20.999999999999993"/>
+                                            <rect key="frame" x="206" y="50.666666666666664" width="42" height="20.999999999999993"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -352,7 +352,7 @@
         <!--My Wall-->
         <scene sceneID="Mdn-Wj-a2U">
             <objects>
-                <tabBarController modalPresentationStyle="fullScreen" id="Cb0-5y-AeK" customClass="myWall" customModule="appVK" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController modalPresentationStyle="fullScreen" id="Cb0-5y-AeK" customClass="MyWall" customModule="appVK" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="dS0-Wp-tsm"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aaq-TB-dnF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -372,7 +372,7 @@
         <!--News-->
         <scene sceneID="4Ix-ae-nW8">
             <objects>
-                <tableViewController id="CCb-Oa-8Ep" customClass="myNewsViewController" customModule="appVK" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="CCb-Oa-8Ep" customClass="MyNewsViewController" customModule="appVK" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="nOD-Be-BnL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -386,13 +386,13 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOZ-gm-xF7">
-                                            <rect key="frame" x="154" y="9" width="67" height="32.333333333333336"/>
+                                            <rect key="frame" x="154" y="9" width="67" height="32.666666666666664"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="27"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="CUh-Rl-1AC">
-                                            <rect key="frame" x="16" y="51.333333333333343" width="343" height="200"/>
+                                            <rect key="frame" x="16" y="51.666666666666657" width="343" height="200"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="999" constant="120" id="s7Q-V5-Ejl"/>
@@ -451,7 +451,7 @@
         <!--Группы-->
         <scene sceneID="wrS-25-OdS">
             <objects>
-                <tableViewController id="4Ni-fz-L9m" customClass="myGroupViewController" customModule="appVK" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="4Ni-fz-L9m" customClass="MyGroupViewController" customModule="appVK" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9iH-Pr-9Yo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -522,7 +522,7 @@
         <!--All Groups View Controller-->
         <scene sceneID="s8T-4T-D6o">
             <objects>
-                <tableViewController id="Qq2-Jt-p2B" customClass="allGroupsViewController" customModule="appVK" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Qq2-Jt-p2B" customClass="AllGroupsViewController" customModule="appVK" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="rkk-Iv-mcR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

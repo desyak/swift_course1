@@ -17,9 +17,9 @@ class PhotoCell: UICollectionViewCell {
         super.awakeFromNib()
         
 
-        let tapToPhoto: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(photoTap))
-        tapToPhoto.numberOfTapsRequired = 2
-        galleryImage.addGestureRecognizer(tapToPhoto)
+//        let tapToPhoto: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(photoTap))
+//        tapToPhoto.numberOfTapsRequired = 2
+//        galleryImage.addGestureRecognizer(tapToPhoto)
 
         
         
@@ -54,17 +54,17 @@ class PhotoCell: UICollectionViewCell {
         }
     }
     
-    @objc private func photoTap() {
-        let aspectPhoto = galleryImage.frame.size.width / galleryImage.frame.size.height
-        let sizePhoto: CGSize = CGSize(width: galleryImage.frame.size.width + 20, height: (galleryImage.frame.size.width + 20)*aspectPhoto)
-        UIView.animate(withDuration: 0.5,
-                       delay: 0,
-                       usingSpringWithDamping: 0.5,
-                       initialSpringVelocity: 0,
-                       options: [.autoreverse],
-                       animations: {
-                        self.galleryImage.frame.size = sizePhoto
-        })
-    }
+//    @objc private func photoTap() {
+//        let aspectPhoto = galleryImage.frame.size.width / galleryImage.frame.size.height
+//        let sizePhoto: CGSize = CGSize(width: galleryImage.frame.size.width + 20, height: (galleryImage.frame.size.width + 20)*aspectPhoto)
+//        UIView.animate(withDuration: 0.5,
+//                       delay: 0,
+//                       usingSpringWithDamping: 0.5,
+//                       initialSpringVelocity: 0,
+//                       options: [.autoreverse],
+//                       animations: {
+//                        self.galleryImage.frame.size = sizePhoto
+//        })
+//    }
     
 }

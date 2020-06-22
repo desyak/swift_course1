@@ -63,16 +63,30 @@ class PhotoViewController: UIViewController {
                 rowIndex! += 1
                 backImage = photos[rowIndex!].idPhoto
                 bigPhoto2.image = backImage
-                let swipeRightOld = CABasicAnimation(keyPath: "position.x")
-                swipeRightOld.toValue = 0 - view.frame.size.width/2
-                swipeRightOld.duration = 1
-                bigPhoto2.layer.add(swipeRightOld, forKey: nil)
+                let swipeLeftOld = CABasicAnimation(keyPath: "position.x")
+                swipeLeftOld.toValue = 0 - view.frame.size.width/2
+                //swipeRightOld.duration = 1
+                let scaleLeftOld = CABasicAnimation(keyPath: "transform.scale")
+                scaleLeftOld.fromValue = 1
+                scaleLeftOld.toValue = 0.8
+                //scaleOld.duration = 2
+                let swipeGroupLeftOld = CAAnimationGroup()
+                swipeGroupLeftOld.duration = 1
+                swipeGroupLeftOld.animations = [swipeLeftOld, scaleLeftOld]
+                bigPhoto2.layer.add(swipeGroupLeftOld, forKey: nil)
                 
-                let swipeRightNew = CABasicAnimation(keyPath: "position.x")
-                swipeRightNew.toValue =  view.frame.size.width/2
-                swipeRightNew.fromValue = view.frame.size.width + view.frame.size.width/2
-                swipeRightNew.duration = 1
-                bigPhoto1.layer.add(swipeRightNew, forKey: nil)
+                let swipeLeftNew = CABasicAnimation(keyPath: "position.x")
+                swipeLeftNew.toValue =  view.frame.size.width/2
+                swipeLeftNew.fromValue = view.frame.size.width + view.frame.size.width/2
+                //swipeRightNew.duration = 1
+                let scaleLeftNew = CABasicAnimation(keyPath: "transform.scale")
+                scaleLeftNew.fromValue = 0.8
+                scaleLeftNew.toValue = 1
+                //scaleNew.duration = 2
+                let swipeGroupLeftNew = CAAnimationGroup()
+                swipeGroupLeftNew.animations = [swipeLeftNew, scaleLeftNew]
+                swipeGroupLeftNew.duration = 1
+                bigPhoto1.layer.add(swipeGroupLeftNew, forKey: nil)
                 
                 
 
@@ -81,16 +95,30 @@ class PhotoViewController: UIViewController {
                 rowIndex = 0
                 backImage = photos[0].idPhoto
                 bigPhoto2.image = backImage
-                let swipeRightOld = CABasicAnimation(keyPath: "position.x")
-                swipeRightOld.toValue = 0 - view.frame.size.width/2
-                swipeRightOld.duration = 1
-                bigPhoto2.layer.add(swipeRightOld, forKey: nil)
+                let swipeLeftOld = CABasicAnimation(keyPath: "position.x")
+                swipeLeftOld.toValue = 0 - view.frame.size.width/2
+                //swipeRightOld.duration = 1
+                let scaleLeftOld = CABasicAnimation(keyPath: "transform.scale")
+                scaleLeftOld.fromValue = 1
+                scaleLeftOld.toValue = 0.8
+                //scaleOld.duration = 2
+                let swipeGroupLeftOld = CAAnimationGroup()
+                swipeGroupLeftOld.duration = 1
+                swipeGroupLeftOld.animations = [swipeLeftOld, scaleLeftOld]
+                bigPhoto2.layer.add(swipeGroupLeftOld, forKey: nil)
                 
-                let swipeRightNew = CABasicAnimation(keyPath: "position.x")
-                swipeRightNew.toValue =  view.frame.size.width/2
-                swipeRightNew.fromValue = view.frame.size.width + view.frame.size.width/2
-                swipeRightNew.duration = 1
-                bigPhoto1.layer.add(swipeRightNew, forKey: nil)
+                let swipeLeftNew = CABasicAnimation(keyPath: "position.x")
+                swipeLeftNew.toValue =  view.frame.size.width/2
+                swipeLeftNew.fromValue = view.frame.size.width + view.frame.size.width/2
+                //swipeRightNew.duration = 1
+                let scaleLeftNew = CABasicAnimation(keyPath: "transform.scale")
+                scaleLeftNew.fromValue = 0.8
+                scaleLeftNew.toValue = 1
+                //scaleNew.duration = 2
+                let swipeGroupLeftNew = CAAnimationGroup()
+                swipeGroupLeftNew.animations = [swipeLeftNew, scaleLeftNew]
+                swipeGroupLeftNew.duration = 1
+                bigPhoto1.layer.add(swipeGroupLeftNew, forKey: nil)
                 
             }
         } else if direction == .right {
@@ -100,14 +128,28 @@ class PhotoViewController: UIViewController {
                 bigPhoto2.image = backImage
                 let swipeRightOld = CABasicAnimation(keyPath: "position.x")
                 swipeRightOld.toValue = view.frame.size.width + view.frame.size.width/2
-                swipeRightOld.duration = 1
-                bigPhoto2.layer.add(swipeRightOld, forKey: nil)
+                //swipeRightOld.duration = 1
+                let scaleRightOld = CABasicAnimation(keyPath: "transform.scale")
+                scaleRightOld.fromValue = 1
+                scaleRightOld.toValue = 0.8
+                //scaleOld.duration = 2
+                let swipeGroupRightOld = CAAnimationGroup()
+                swipeGroupRightOld.duration = 1
+                swipeGroupRightOld.animations = [swipeRightOld, scaleRightOld]
+                bigPhoto2.layer.add(swipeGroupRightOld, forKey: nil)
                 
                 let swipeRightNew = CABasicAnimation(keyPath: "position.x")
                 swipeRightNew.toValue =  view.frame.size.width/2
                 swipeRightNew.fromValue = 0 - view.frame.size.width/2
                 swipeRightNew.duration = 1
-                bigPhoto1.layer.add(swipeRightNew, forKey: nil)
+                let scaleRightNew = CABasicAnimation(keyPath: "transform.scale")
+                scaleRightNew.fromValue = 0.8
+                scaleRightNew.toValue = 1
+                //scaleNew.duration = 2
+                let swipeGroupRightNew = CAAnimationGroup()
+                swipeGroupRightNew.animations = [swipeRightNew, scaleRightNew]
+                swipeGroupRightNew.duration = 1
+                bigPhoto1.layer.add(swipeGroupRightNew, forKey: nil)
                 
                 
             } else {
@@ -116,14 +158,28 @@ class PhotoViewController: UIViewController {
                 bigPhoto2.image = backImage
                 let swipeRightOld = CABasicAnimation(keyPath: "position.x")
                 swipeRightOld.toValue = view.frame.size.width + view.frame.size.width/2
-                swipeRightOld.duration = 1
-                bigPhoto2.layer.add(swipeRightOld, forKey: nil)
+                //swipeRightOld.duration = 1
+                let scaleRightOld = CABasicAnimation(keyPath: "transform.scale")
+                scaleRightOld.fromValue = 1
+                scaleRightOld.toValue = 0.8
+                //scaleOld.duration = 2
+                let swipeGroupRightOld = CAAnimationGroup()
+                swipeGroupRightOld.duration = 1
+                swipeGroupRightOld.animations = [swipeRightOld, scaleRightOld]
+                bigPhoto2.layer.add(swipeGroupRightOld, forKey: nil)
                 
                 let swipeRightNew = CABasicAnimation(keyPath: "position.x")
                 swipeRightNew.toValue =  view.frame.size.width/2
                 swipeRightNew.fromValue = 0 - view.frame.size.width/2
-                swipeRightNew.duration = 1
-                bigPhoto1.layer.add(swipeRightNew, forKey: nil)
+                //swipeRightNew.duration = 1
+                let scaleRightNew = CABasicAnimation(keyPath: "transform.scale")
+                scaleRightNew.fromValue = 0.8
+                scaleRightNew.toValue = 1
+                //scaleNew.duration = 2
+                let swipeGroupRightNew = CAAnimationGroup()
+                swipeGroupRightNew.animations = [swipeRightNew, scaleRightNew]
+                swipeGroupRightNew.duration = 1
+                bigPhoto1.layer.add(swipeGroupRightNew, forKey: nil)
             }
         }
         photoNumber.currentPage = rowIndex!
