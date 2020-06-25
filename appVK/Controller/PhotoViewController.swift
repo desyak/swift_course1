@@ -46,9 +46,12 @@ class PhotoViewController: UIViewController {
         recogniser1.direction =  .right
         let recogniser2 = UISwipeGestureRecognizer(target: self, action: #selector(photoPinch1(gesture: )))
         recogniser2.direction = .left
+        let recogniser3 = UISwipeGestureRecognizer(target: self, action: #selector(photoPinch1(gesture: )))
+        recogniser3.direction =  .down
         //recogniser1.maximumNumberOfTouches = 1
-        bigPhoto2.addGestureRecognizer(recogniser2)
         bigPhoto2.addGestureRecognizer(recogniser1)
+        bigPhoto2.addGestureRecognizer(recogniser2)
+        bigPhoto2.addGestureRecognizer(recogniser3)
         // Do any additional setup after loading the view.
     }
     
@@ -58,7 +61,8 @@ class PhotoViewController: UIViewController {
         let direction = gesture.direction
         
 
-        if direction == .left {
+        switch direction {
+        case .left:
             if rowIndex! <= (photos.count - 2) {
                 rowIndex! += 1
                 backImage = photos[rowIndex!].idPhoto
@@ -121,7 +125,7 @@ class PhotoViewController: UIViewController {
                 bigPhoto1.layer.add(swipeGroupLeftNew, forKey: nil)
                 
             }
-        } else if direction == .right {
+        case .right:
             if rowIndex! != 0 {
                 rowIndex! -= 1
                 backImage = photos[rowIndex!].idPhoto
@@ -181,6 +185,10 @@ class PhotoViewController: UIViewController {
                 swipeGroupRightNew.duration = 1
                 bigPhoto1.layer.add(swipeGroupRightNew, forKey: nil)
             }
+        case .down:
+            navigationController?.popViewController(animated: true)
+        default:
+            break
         }
         photoNumber.currentPage = rowIndex!
         view.setNeedsDisplay()
