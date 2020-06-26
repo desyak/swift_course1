@@ -40,26 +40,27 @@ class PhotoViewController: UIViewController {
         
         photoNumber.numberOfPages = photos.count
         photoNumber.currentPage = rowIndex!
-        //let recogniser1 = UIPanGestureRecognizer.init(target: self, action: #selector(photoPinch1(gesture: )))
         
-        let recogniser1 = UISwipeGestureRecognizer(target: self, action: #selector(photoPinch1(gesture: )))
-        recogniser1.direction =  .right
-        let recogniser2 = UISwipeGestureRecognizer(target: self, action: #selector(photoPinch1(gesture: )))
-        recogniser2.direction = .left
-        let recogniser3 = UISwipeGestureRecognizer(target: self, action: #selector(photoPinch1(gesture: )))
-        recogniser3.direction =  .down
-        //recogniser1.maximumNumberOfTouches = 1
-        bigPhoto2.addGestureRecognizer(recogniser1)
-        bigPhoto2.addGestureRecognizer(recogniser2)
-        bigPhoto2.addGestureRecognizer(recogniser3)
-        // Do any additional setup after loading the view.
+        //let recogniser1 = UIPanGestureRecognizer.init(target: self, action: #selector(photoPinch1(gesture: )))
+        let recogniserLeft = UISwipeGestureRecognizer(target: self, action: #selector(photoSwipe(gesture: )))
+        recogniserLeft.direction =  .left
+        let recogniserRight = UISwipeGestureRecognizer(target: self, action: #selector(photoSwipe(gesture: )))
+        recogniserRight.direction = .right
+        let recogniserDown = UISwipeGestureRecognizer(target: self, action: #selector(photoSwipe(gesture: )))
+        recogniserDown.direction = .down
+        
+
+        bigPhoto2.addGestureRecognizer(recogniserLeft)
+        bigPhoto2.addGestureRecognizer(recogniserRight)
+        bigPhoto2.addGestureRecognizer(recogniserDown)
+
     }
     
     
-    
-    @objc func photoPinch1(gesture: UISwipeGestureRecognizer) {
+
+    @objc func photoSwipe(gesture: UISwipeGestureRecognizer) {
+
         let direction = gesture.direction
-        
 
         switch direction {
         case .left:
@@ -93,7 +94,7 @@ class PhotoViewController: UIViewController {
                 bigPhoto1.layer.add(swipeGroupLeftNew, forKey: nil)
                 
                 
-
+                
                 
             } else {
                 rowIndex = 0
