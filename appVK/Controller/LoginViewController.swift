@@ -12,8 +12,7 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
+        transitioningDelegate = self
         // Do any additional setup after loading the view.
         let tapGR = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
         view.addGestureRecognizer(tapGR)
@@ -113,4 +112,17 @@ class LoginViewController: UIViewController {
      }
      */
     
+}
+
+extension LoginViewController: UIViewControllerTransitioningDelegate {
+
+    func animationController(forPresented presented: UIViewController,
+                             presenting: UIViewController,
+                             source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return AnimationPush(presenting: true)
+    }
+
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return AnimationPush(presenting: false)
+    }
 }

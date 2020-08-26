@@ -107,7 +107,7 @@
                         <outlet property="loginScroll" destination="kzh-lg-x4H" id="P9P-Ip-CaV"/>
                         <outlet property="nameTextField" destination="srY-kJ-Ovd" id="n9i-OJ-0C4"/>
                         <outlet property="passTextField" destination="l9M-c8-fUP" id="m73-pz-cBo"/>
-                        <segue destination="xAY-Fm-egk" kind="show" identifier="Login Segue" id="aki-K7-M4X"/>
+                        <segue destination="xAY-Fm-egk" kind="custom" identifier="Login Segue" customClass="CustomSegue" customModule="appVK" customModuleProvider="target" id="aki-K7-M4X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -119,7 +119,7 @@
             <objects>
                 <tableViewController id="tYj-JD-Wtp" customClass="MyFriendsViewController" customModule="appVK" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleAspectFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="y39-t5-GtZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
@@ -222,7 +222,7 @@
             <objects>
                 <collectionViewController id="Rhd-Iq-8Dv" customClass="PhotoGalleryController" customModule="appVK" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" id="Ohd-vO-gWZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="e6e-Iv-0KU">
@@ -307,17 +307,17 @@
             <objects>
                 <viewController id="ggG-UF-Rz4" customClass="PhotoViewController" customModule="appVK" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="J68-W8-91s">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AhA-Ik-itl">
-                                <rect key="frame" x="0.0" y="209" width="375" height="340"/>
+                                <rect key="frame" x="0.0" y="209" width="375" height="394"/>
                             </imageView>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rUE-yR-4wT">
                                 <rect key="frame" x="0.0" y="209" width="375" height="340"/>
                             </imageView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="yMw-tB-8y2">
-                                <rect key="frame" x="50" y="584" width="275" height="40"/>
+                                <rect key="frame" x="50" y="638" width="275" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="bK4-VW-0bj"/>
                                 </constraints>
@@ -374,7 +374,7 @@
             <objects>
                 <tableViewController id="CCb-Oa-8Ep" customClass="MyNewsViewController" customModule="appVK" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="nOD-Be-BnL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
@@ -453,7 +453,7 @@
             <objects>
                 <tableViewController id="4Ni-fz-L9m" customClass="MyGroupViewController" customModule="appVK" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9iH-Pr-9Yo">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="zKr-Sz-uTl">
@@ -524,7 +524,7 @@
             <objects>
                 <tableViewController id="Qq2-Jt-p2B" customClass="AllGroupsViewController" customModule="appVK" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="rkk-Iv-mcR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
@@ -578,10 +578,10 @@
             </objects>
             <point key="canvasLocation" x="5954.3999999999996" y="625.86206896551732"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Custom Navigation Controller-->
         <scene sceneID="cT7-AW-9G3">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="xAY-Fm-egk" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="xAY-Fm-egk" customClass="CustomNavigationController" customModule="appVK" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="xl9-BQ-FfK"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JPc-yB-iIc">
