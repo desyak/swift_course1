@@ -20,11 +20,18 @@ class TransitionManager: NSObject, UIViewControllerAnimatedTransitioning, UIView
         guard let source = transitionContext.viewController(forKey: .from)  else { return }
         guard let destination = transitionContext.viewController(forKey: .to) else { return }
         
+        let π = CGFloat.pi
         let containerViewFrame = transitionContext.containerView.frame
         let sourceViewTargetFrame = CGRect(x: 0,
                                            y: -containerViewFrame.height,
                                            width: source.view.frame.width,
                                            height: source.view.frame.height)
+        let offScreenRotateIn = CGAffineTransform(rotationAngle: -π/2)
+        let offScreenRotateOut = CGAffineTransform(rotationAngle: π/2)
+        
+        destination.view.layer.anchorPoint = CGPoint(x:0, y:source.view.frame.size.width)
+        source.view.layer.anchorPoint = CGPoint(x:0, y:source.view.frame.size.width)
+        
         let destinationViewTargetFrame = source.view.frame
 
         transitionContext.containerView.addSubview(destination.view)
