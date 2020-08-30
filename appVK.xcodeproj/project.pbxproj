@@ -79,6 +79,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		51006ECF24FBE31F001BB2B9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				51006ECD24FBBF80001BB2B9 /* Session.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		5154748223672A62009F57BA = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +106,7 @@
 		5154748D23672A62009F57BA /* appVK */ = {
 			isa = PBXGroup;
 			children = (
+				51006ECF24FBE31F001BB2B9 /* Services */,
 				516219DB23788C7A007CD527 /* Helpers */,
 				516219DA23788C40007CD527 /* Model */,
 				516219D923788C35007CD527 /* View */,
@@ -158,7 +167,6 @@
 				51E990292487B85000502EE8 /* News.swift */,
 				513B34592393F1A0003D3F88 /* Group.swift */,
 				517AF930239CFC9500E3DCD7 /* Photo.swift */,
-				51006ECD24FBBF80001BB2B9 /* Session.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
